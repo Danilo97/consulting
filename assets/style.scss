@@ -1,0 +1,429 @@
+*{
+    padding: 0;
+    margin:0;
+}
+html{
+    scroll-behavior: smooth;
+}
+$res1: 1390px;
+$res2: 1120px;
+$res3: 992px;
+$res4: 768px;
+$res5: 576px;
+$res6: 480px;
+$res7: 386px;
+
+@mixin res1 {
+    @media (max-width: #{$res1}){
+        @content;
+    }
+}
+
+@mixin res2 {
+    @media (max-width: #{$res2}){
+        @content;
+    }
+}
+
+
+@mixin res3 {
+    @media (max-width: #{$res3}){
+        @content;
+    }
+}
+
+@mixin res4 {
+    @media (max-width: #{$res4}){
+        @content;
+    }
+}
+
+@mixin res5 {
+    @media (max-width: #{$res5}){
+        @content;
+    }
+}
+
+@mixin res6 {
+    @media (max-width: #{$res6}){
+        @content;
+    }
+}
+
+@mixin res7 {
+    @media (max-width: #{$res7}){
+        @content;
+    }
+}
+body{
+ #mainNav{
+    background-color: #178fd6;
+    height: 70px;
+    display:flex;
+    align-items:center;
+    justify-content: space-around;
+    position: fixed;
+    z-index:998;
+    width:100%;
+    top:0px;
+    left:0px;
+    @include res3{
+        display:none;
+    }
+        ul{
+            display: flex;
+            margin-bottom: 0%;
+            
+            li{
+                list-style-type: none;
+                margin-right:50px;
+                a{
+                   color:#fff;
+                   font-size:20px;
+                   text-decoration: none;
+                   position: relative;
+                   transition: .7s;
+
+                   &:after{
+                       content: '';
+                       position: absolute;
+                       width: 6px;
+                       height: 2px;
+                       background: #4fafd1;
+                       top: 30px;
+                       left: 1px;
+                       transition: .7s;
+                   }
+
+                   &:hover:after{
+                       width: 100%;
+                   }
+                }
+            }  
+        } 
+        
+ }
+ //SIDENAV
+ #mainNavSide{
+     width:300px;
+     padding:5% 0 5% 0;
+     background-color:#178fd6 ;
+     position:fixed;
+     z-index:999;
+     top:0;
+     bottom:0;
+     display:flex;
+     flex-direction: column;
+     align-items: center;
+     transform: translateX(-300px);
+     transition:0.7s;
+     ul{
+        margin-top:10%;
+        li{
+            margin-top:20%;
+            list-style-type: none;
+            a{
+                text-decoration: none;
+                color:#fff;
+                &:hover{
+                    color:#7EDDFF;
+                }
+            }
+        }
+     }
+     
+ } 
+ .mainNavSide1{
+     transform: translateX(0px) !important;
+     background-color: #178fd6 !important;
+
+ }  
+ //Burger ikonica
+ .burgerMenu {
+
+    position: fixed;
+    top: 3%;
+    left: 2%;
+    z-index: 999;
+    display:none;
+    @include res3{
+        display:block;
+    }
+
+
+    a{
+        text-decoration: none;
+        i {
+            color:#0083B0;
+            font-size: 2em;
+        }
+    }
+}
+ .container-fluid{
+    padding-right:0px;
+    padding-left:0px;
+ } 
+
+    #main{
+        background-image: url("../images/main.jpg");
+        height:100vh;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        #fading{
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 131, 176, 0.5) !important;
+            display:flex;
+            align-items: center;
+            .mainText{
+                text-align: center;
+                color:#fff; 
+                .divSlide{
+                    h1,h2,h3{
+                        font-size:2.5em;
+                    }
+                }  
+            }
+        }
+    }
+    #usluge{
+        padding-top:5%;
+        h2{
+            font-size:2.5em;
+            color:#0083B0;
+        }
+        .serviceDiv{
+            margin:3% 0 2% 0;
+            h3{
+                padding:2% 0 2% 0;
+                color: #0083B0; 
+                font-size:1.40em;
+            }
+            p{
+                font-size:17px;
+            }
+        }
+    }
+    #nasaMisija{
+        padding-top:5%;
+        background: linear-gradient(top, #00B4DB, #0083B0);
+        .container{
+            
+            h3{
+                color:#fff;  
+                font-size:2.5em;
+            }
+            .row{
+                padding:3%;
+                p{
+                    font-size:18px;
+                    color:#fff;
+                }
+                .sakrij1{
+                    display:none;
+                }
+                .otkrij{
+                    display:block;
+                }
+                #toggleDugme{
+                    background-color: #fff;
+                    padding:1% 5% 1% 5%;
+                    color:#0083B0;
+                    font-weight:bold;
+                    border-radius:10px;
+                    border:none;
+                    &:hover{
+                        background-color: #00B4DB;
+                        color:#fff;  
+                    }
+                    a{
+                        text-decoration:none;
+                    }
+                }
+            }
+        }
+    }
+    #kakoSmoPoceli{
+        .container{
+            h3{
+                font-size:2.5em;
+                color:#0083B0;
+                padding-top:5%;
+            }
+            .row{
+                .order1{
+                    @include res3{
+                        order:1;
+                    }
+                }
+                .order2{
+                    @include res3{
+                        order:2;
+                    }
+                }
+                .order3{
+                    @include res3{
+                        order:3;
+                    }
+                }
+                .order4{
+                    @include res3{
+                        order:4;
+                    }
+                }
+                .order5{
+                    @include res3{
+                        order:5;
+                    }
+                }
+                .order6{
+                    @include res3{
+                        order:6;
+                    }
+                }
+                .textPoceli{
+                    padding-top:5%;
+                    padding-bottom:5%;
+                    h4{
+                        color:#0083B0;
+                        margin-bottom:3%;
+                    }
+                    p{
+                        font-size:18px;
+                    }
+                }
+                .slikaPoceli{
+                    padding-top:3%;
+                    padding-bottom:5%;
+                }
+            }
+        }
+    }
+    #klijenti{
+        background: linear-gradient(top, #00B4DB, #0083B0);
+        .container{
+            h3{
+                font-size:2.5em;
+                color:#fff;
+                padding-top:5%;
+            }
+            .row{
+                padding:5% 0 5% 0;
+                .testimonial{
+                    padding:0 20% 0 20%;
+                    h4{
+                        color: #fff;
+                    }
+                    p{
+                        color:#fff;
+                    }
+                }
+            }
+        }
+    }
+    #kontakt{
+        padding:5% 10% 5% 10%;
+        .container{
+            h3{
+                font-size:2.5em;
+                color:#0083B0;
+            }
+            .row{
+                .divForma{
+                    form{
+                        padding-top:5%;
+                        .form-group{
+                            textarea{
+                                width:100%;
+                                height:150px;
+                                border-radius:5px;
+                                border:1px solid #0083B0;
+                                resize:none;
+
+                            }
+                            input[type=text]{
+                                border:1px solid #0083B0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #provera{
+            background-color: #178fd6;
+            padding:1% 5% 1% 5%;
+            border:none;
+            &:hover{
+                background-color: #4fafd1;
+            }
+        }
+    }
+    footer{
+        background-color: #178fd6;
+        height:auto;
+        .container{
+            .row{
+                display: flex;
+                justify-content: space-around;
+                #logoFooter{
+                    padding-top:5%;
+                }
+                #footerMenu{
+                    padding-top:3%;
+                    h3{
+                        color:#fff;
+                    }
+                    nav{
+                        ul{
+                            li{
+                                list-style-type: none;
+                                a{
+                                    text-decoration: none;
+                                    color:#fff;
+                                    &:hover{
+                                        color:#7EDDFF;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+    .autor{
+        padding:20% 0% 5% 0%;
+        .autorSlika{
+            figure{
+                img{
+                    border-radius:50%;
+                }
+            }
+        }
+        .autorText{
+            h1{
+                padding-top:10%;
+                font-size:2em;
+                color:#0083B0;
+            }
+            p{
+                font-size:20px;
+            }
+        }
+    }
+    #mainNavAutor{
+        background-color: #178fd6;
+        height: 70px;
+        display:flex;
+        align-items:center;
+        justify-content: space-around;
+        position: fixed;
+        z-index:998;
+        width:100%;
+        top:0px;
+        left:0px;
+    }
+    
+}
